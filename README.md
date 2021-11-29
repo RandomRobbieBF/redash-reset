@@ -2,6 +2,11 @@
 
 This will use a default `REDASH_SECRET_KEY` key of `c292a0a3aa32397cdb050e233733900f` this allows you to reset the password of the user ID but you will need to know the email address assocaited with it.
 
+Info
+---
+
+[https://github.com/getredash/redash/security/advisories/GHSA-g8xr-f424-h2rv](https://github.com/getredash/redash/security/advisories/GHSA-g8xr-f424-h2rv)
+
 Setup
 ---
 
